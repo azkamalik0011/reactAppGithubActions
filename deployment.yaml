@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: zreact
+  name: zreact
+  namespace: demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zreact
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: zreact
+    spec:
+      containers:
+      - image: azkadevops/react:1.5
+        name: react
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
+        resources: {}
+status: {}
